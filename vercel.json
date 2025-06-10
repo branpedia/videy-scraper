@@ -6,14 +6,22 @@
       "use": "@vercel/static"
     },
     {
-      "src": "src/api.js",
+      "src": "src/api/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "src/index.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/src/api.js"
+      "src": "/api/videy",
+      "dest": "/src/api/videy.js"
+    },
+    {
+      "src": "/api/other",
+      "dest": "/src/api/other-api.js"
     },
     {
       "src": "/(.*)",
